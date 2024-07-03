@@ -1,0 +1,10 @@
+{
+  "extends": ["./tsconfig.json"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "removeComments": true,
+    "target": "ESNext"
+  },
+  "include": ["src/index.es.ts", "lib/*.ts"],
+  "exclude": ["node_modules", "specs/**/*.ts", "src/index.cjs.ts"]
+}
