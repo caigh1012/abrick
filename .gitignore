@@ -10,6 +10,8 @@ node_modules/
 
 # Ignore the cache directory
 .cache
+# docs
+docs/.vitepress/cache
 tmp
 tmp-*
 
@@ -52,6 +54,3 @@ coverage
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# docs
-docs/.vitepress/cache
