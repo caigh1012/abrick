@@ -4,7 +4,6 @@
   "description": "A javascript utility library",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
-  "types": "./types/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -20,6 +19,9 @@
   "scripts": {
     "prepare": "husky || true",
     "preinstall": "npx only-allow pnpm",
+    "docs:dev": "cross-env NODE_ENV=development vitepress dev docs",
+    "docs:build": "cross-env NODE_ENV=production vitepress build docs",
+    "docs:preview": "cross-env NODE_ENV=development vitepress preview docs",
     "build": "rollup --config rollup.config.ts --configPlugin typescript",
     "eslint": "eslint **/*.{ts,js}",
     "eslint:fix": "eslint **/*.{ts,js} --fix",
@@ -58,6 +60,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@jest/globals": "^29.7.0",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-terser": "^0.4.4",
@@ -65,6 +68,7 @@
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.45.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.27.5",
@@ -81,7 +85,8 @@
     "rollup-plugin-dts": "^6.1.1",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "vitepress": "^1.2.3"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.24.7",
