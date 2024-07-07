@@ -3,6 +3,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# 可以手动触发将测试覆盖率上传 https://about.codecov.io/
 jobs:
   codecov:
     runs-on: ubuntu-latest

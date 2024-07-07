@@ -68,7 +68,7 @@ module.exports = {
     requireCleanWorkingDir: false,
   },
   hooks: {
-    'before:init': ['pnpm eslint', 'pnpm build'],
+    'before:init': ['git pull', 'pnpm eslint', 'pnpm build'],
     'after:bump': 'echo 更新版本成功',
   },
   npm: {
