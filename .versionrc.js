@@ -75,6 +75,7 @@ module.exports = {
   // NPM 配置
   npm: {
     publish: true,
+    publishPath: '.',
     ignoreVersion: false,
   },
   // Github 配置
