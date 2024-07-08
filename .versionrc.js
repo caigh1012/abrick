@@ -72,8 +72,11 @@ module.exports = {
     requireCommits: false,
     requireCleanWorkingDir: false,
   },
-  // 不借助 release-it 进行发布，通过 GitHub Actions 进行发布
-  npm: false,
+  // NPM 配置
+  npm: {
+    publish: true,
+    ignoreVersion: false,
+  },
   // Github 配置
   github: {
     release: true,

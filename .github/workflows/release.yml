@@ -6,10 +6,11 @@ on:
         type: choice
         description: Choose release type
         options:
+          - auto
           - patch
           - minor
           - major
-        default: patch
+        default: auto
       beta:
         type: boolean
         description: Prerelease
@@ -71,14 +72,11 @@ jobs:
         run: npm config set //registry.npmjs.org:_authToken $NODE_AUTH_TOKEN
 
       - name: Run release
-        run: pnpm release $INCREMENT $TYPE_ARG $BETA_ARG $DRY_ARG
+        run: pnpm release $TYPE_ARG $BETA_ARG $INCREMENT $DRY_ARG
         env:
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           INCREMENT: ${{ github.event.inputs.increment == 'true' && '--no-increment' || ''}}
-          TYPE_ARG: ${{ fromJSON('{"patch":"patch", "minor":"minor", "major":"major"}')[github.event.inputs.type] }}
+          TYPE_ARG: ${{ fromJSON('{"auto":"", "patch":"patch", "minor":"minor", "major":"major"}')[github.event.inputs.type] }}
           BETA_ARG: ${{ github.event.inputs.beta == 'true' && '--preRelease=beta' || '' }}
           DRY_ARG: ${{ github.event.inputs.dry == 'true' && '--dry-run' || '' }}
-      # 发布 npm
-      - name: Publish
-        if: ${{ github.event.inputs.dry == 'false' && github.event.inputs.npm == 'true' }}
-        run: npm publish
