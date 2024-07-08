@@ -58,25 +58,28 @@ module.exports = {
       header: '# 更新日志',
     },
   },
+  hooks: {
+    'before:init': ['git pull', 'pnpm eslint', 'pnpm build'],
+    'after:bump': 'echo 更新版本成功',
+  },
   git: {
     requireBranch: 'main',
     commitMessage: 'chore: release v${version}',
     push: true,
     commit: true,
     tag: true,
+    tagName: 'v${version}',
     requireCommits: false,
     requireCleanWorkingDir: false,
   },
-  hooks: {
-    'before:init': ['git pull', 'pnpm eslint', 'pnpm build'],
-    'after:bump': 'echo 更新版本成功',
-  },
-  npm: {
-    publish: false,
-    ignoreVersion: false,
-  },
+  // 不借助 release-it 进行发布，通过 GitHub Actions 进行发布
+  npm: false,
+  // Github 配置
   github: {
     release: true,
-    draft: true,
+    releaseName: 'Release ${version}',
+    draft: false,
   },
+  // 暂无相关配置
+  gitlab: {},
 };

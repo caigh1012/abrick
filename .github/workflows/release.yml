@@ -22,6 +22,10 @@ on:
         type: boolean
         description: Dry release
         default: false
+      increment: # 跳过版本更新
+        type: boolean
+        description: To skip updating the version
+        default: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -67,13 +71,14 @@ jobs:
         run: npm config set //registry.npmjs.org:_authToken $NODE_AUTH_TOKEN
 
       - name: Run release
-        run: pnpm release --ci --verbose $TYPE_ARG $BETA_ARG $DRY_ARG
+        run: pnpm release $INCREMENT $TYPE_ARG $BETA_ARG $DRY_ARG
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          INCREMENT: ${{ github.event.inputs.increment == 'true' && '--no-increment'}}
           TYPE_ARG: ${{ fromJSON('{"patch":"patch", "minor":"minor", "major":"major"}')[github.event.inputs.type] }}
           BETA_ARG: ${{ github.event.inputs.beta == 'true' && '--preRelease=beta' || '' }}
           DRY_ARG: ${{ github.event.inputs.dry == 'true' && '--dry-run' || '' }}
-
+      # 发布 npm
       - name: Publish
         if: ${{ github.event.inputs.dry == 'false' && github.event.inputs.npm == 'true' }}
         run: npm publish
