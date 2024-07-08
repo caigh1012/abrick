@@ -1,5 +1,7 @@
 # 更新日志
 
+## [0.1.0](https://github.com/caigh1012/abrick/compare/v0.1.0-beta.0...v0.1.0) (2024-07-08)
+
 ## 0.1.0-beta.0 (2024-07-08)
 
 

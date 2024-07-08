@@ -23,7 +23,7 @@
     "docs:build": "cross-env NODE_ENV=production vitepress build docs",
     "docs:preview": "cross-env NODE_ENV=development vitepress preview docs",
     "build": "rollup --config rollup.config.ts --configPlugin typescript",
-    "release": "release-it  -c .versionrc.js --ci --verbose",
+    "release": "release-it  -c .versionrc.js --ci patch --verbose",
     "release:dry": "release-it  -c .versionrc.js --dry-run",
     "eslint": "eslint **/*.{ts,js}",
     "eslint:fix": "eslint **/*.{ts,js} --fix",
