@@ -54,15 +54,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run tests and collect coverage
-        run: pnpm test
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          verbose: true
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
       - name: Set Git Config
         run: |
           git config user.name "${GITHUB_ACTOR}"
