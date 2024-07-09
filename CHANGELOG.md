@@ -11,6 +11,22 @@
 * test release.yml ([6b216e0](https://github.com/caigh1012/abrick/commit/6b216e0ae3782028a031fcbbe3da28a5db9fd3e6))
 * test release.yml ([bc09c8b](https://github.com/caigh1012/abrick/commit/bc09c8b51fe54303de810f714619ea9e205734d3))
 
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* release v0.0.2-beta.0 ([d37b01e](https://github.com/caigh1012/abrick/commit/d37b01ec37c59ad13d56e5fa462cd72783382529))
+
+## [0.0.2-beta.0](https://github.com/caigh1012/abrick/compare/v0.1.0...v0.0.2-beta.0) (2024-07-08)
+
+
+### ✅ Tests | 测试
+
+* test release.yml ([35f6aeb](https://github.com/caigh1012/abrick/commit/35f6aeb2cfbe3e148133376650db5202fb45ea0c))
+* test release.yml ([e6ceaaa](https://github.com/caigh1012/abrick/commit/e6ceaaa6d186ec4be9b57f9cb47f70b81419d6f1))
+* test release.yml ([55fc291](https://github.com/caigh1012/abrick/commit/55fc291f4def6025bb0400a6ed001ebd75151d26))
+* test release.yml ([6b216e0](https://github.com/caigh1012/abrick/commit/6b216e0ae3782028a031fcbbe3da28a5db9fd3e6))
+* test release.yml ([bc09c8b](https://github.com/caigh1012/abrick/commit/bc09c8b51fe54303de810f714619ea9e205734d3))
+
 ## [0.1.0](https://github.com/caigh1012/abrick/compare/v0.1.0-beta.0...v0.1.0) (2024-07-08)
 
 ## 0.1.0-beta.0 (2024-07-08)
