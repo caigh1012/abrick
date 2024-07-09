@@ -1,5 +1,12 @@
 # 更新日志
 
+## [0.1.0](https://github.com/caigh1012/abrick/compare/v0.1.0-beta.0...v0.1.0) (2024-07-08)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* release v0.1.0 ([4bf37a5](https://github.com/caigh1012/abrick/commit/4bf37a5494026e709132a8dcecd14fa7b9000ed3))
+
 ## [0.0.2-beta.0](https://github.com/caigh1012/abrick/compare/v0.1.0...v0.0.2-beta.0) (2024-07-08)
 
 
