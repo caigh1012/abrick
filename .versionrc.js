@@ -73,10 +73,7 @@ module.exports = {
     requireCleanWorkingDir: false,
   },
   // NPM 配置
-  npm: {
-    publish: true,
-    ignoreVersion: false,
-  },
+  npm: false,
   // Github 配置
   github: {
     release: true,
